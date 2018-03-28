@@ -18,4 +18,21 @@ public class PrimeiroController {
     public String nome() {
         return "Guilherme";
     }
+
+    @GetMapping("/")
+    @ResponseBody
+    public String ola() {
+        return "<html><body>"
+                + "<form action='/comprimento'>"
+                + "digite seu nome: <input name='nome'/>"
+                + "<input type='submit' value='enviar' />"
+                + "</form>"
+                + "</body></html>";
+    }
+
+    @GetMapping("/comprimento")
+    @ResponseBody
+    public String comprimento(String nome) {
+        return "<h1>Bem vindo " + nome + "</h1>";
+    }
 }
